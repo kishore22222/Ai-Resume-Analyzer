@@ -6,4 +6,6 @@ libgconf-2-4
 libfontconfig1
 xvfb
 wget
-unzip 
+unzip
+tesseract-ocr
+libpoppler-cpp-dev

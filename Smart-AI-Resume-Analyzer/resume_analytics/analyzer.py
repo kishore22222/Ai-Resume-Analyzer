@@ -1,10 +1,18 @@
 import spacy
 from collections import Counter
 from datetime import datetime
+import streamlit as st
 
 class ResumeAnalyzer:
     def __init__(self):
-        self.nlp = spacy.load("en_core_web_sm")
+        try:
+            self.nlp = spacy.load("en_core_web_sm")
+        except OSError:
+            st.error("SpaCy model not found. Installing it now...")
+            import subprocess
+            import sys
+            subprocess.check_call([sys.executable, "-m", "spacy", "download", "en_core_web_sm"])
+            self.nlp = spacy.load("en_core_web_sm")
         
     def analyze_resume(self, resume_text):
         """Analyze resume text and return metrics"""
