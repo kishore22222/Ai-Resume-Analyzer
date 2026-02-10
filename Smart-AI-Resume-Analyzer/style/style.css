@@ -1,0 +1,159 @@
+:root {
+    --bg-main: #0a0e27;
+    --bg-card: #1a1f3a;
+    --bg-sidebar: #0f1425;
+    --bg-gradient-1: #1e3c72;
+    --bg-gradient-2: #2a5298;
+
+    --primary: #00d4ff;
+    --primary-dark: #0097d9;
+    --accent: #ff006e;
+    --accent-light: #ff4da6;
+    --success: #00d084;
+    --warning: #ffa502;
+    --danger: #ff4757;
+
+    --text-main: #e8ecf1;
+    --text-muted: #a0aec0;
+    --text-dim: #718096;
+
+    --shadow-sm: 0 2px 8px rgba(0, 212, 255, 0.08);
+    --shadow-md: 0 8px 24px rgba(0, 212, 255, 0.12);
+    --shadow-lg: 0 16px 48px rgba(0, 212, 255, 0.16);
+}
+
+/* App background */
+.stApp {
+    background: linear-gradient(135deg, #0a0e27 0%, #1a0f3a 100%);
+    color: var(--text-main);
+}
+
+/* Sidebar */
+section[data-testid="stSidebar"] {
+    background: linear-gradient(180deg, #0f1425 0%, #1a1f3a 100%);
+    box-shadow: inset -2px 0 12px rgba(0, 212, 255, 0.05);
+}
+
+/* Cards */
+.feature-card,
+.form-section,
+.template-card {
+    background: linear-gradient(135deg, rgba(26, 31, 58, 0.8) 0%, rgba(30, 60, 114, 0.6) 100%);
+    border-radius: 16px;
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    box-shadow: var(--shadow-md);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover,
+.form-section:hover,
+.template-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(0, 212, 255, 0.4);
+    background: linear-gradient(135deg, rgba(30, 60, 114, 0.9) 0%, rgba(42, 82, 152, 0.8) 100%);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+/* Buttons */
+.stButton > button {
+    background: linear-gradient(135deg, var(--primary) 0%, #00a8cc 100%);
+    color: #020617;
+    border-radius: 10px;
+    font-weight: 700;
+    border: none;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+}
+
+.stButton > button:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+    background: linear-gradient(135deg, #00e5ff 0%, #00d4ff 100%);
+}
+
+.stButton > button:active {
+    transform: translateY(-1px);
+}
+
+/* Inputs */
+input, textarea, select {
+    background-color: rgba(15, 20, 37, 0.8) !important;
+    color: var(--text-main) !important;
+    border: 2px solid rgba(0, 212, 255, 0.2) !important;
+    border-radius: 8px !important;
+    transition: all 0.3s ease !important;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: var(--primary) !important;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.2) !important;
+    background-color: rgba(30, 60, 114, 0.5) !important;
+}
+
+/* Success / Error / Warning */
+.stAlert.success {
+    background: linear-gradient(135deg, rgba(0, 208, 132, 0.2) 0%, rgba(0, 208, 132, 0.05) 100%);
+    border: 1px solid rgba(0, 208, 132, 0.3);
+    border-radius: 12px;
+}
+
+.stAlert.error {
+    background: linear-gradient(135deg, rgba(255, 71, 87, 0.2) 0%, rgba(255, 71, 87, 0.05) 100%);
+    border: 1px solid rgba(255, 71, 87, 0.3);
+    border-radius: 12px;
+}
+
+.stAlert.warning {
+    background: linear-gradient(135deg, rgba(255, 165, 2, 0.2) 0%, rgba(255, 165, 2, 0.05) 100%);
+    border: 1px solid rgba(255, 165, 2, 0.3);
+    border-radius: 12px;
+}
+
+/* Tabs */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 8px;
+}
+
+.stTabs [data-baseweb="tab"] {
+    background: rgba(26, 31, 58, 0.6);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    border-radius: 8px;
+    color: var(--text-muted);
+    transition: all 0.3s ease;
+}
+
+.stTabs [aria-selected="true"] {
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.3) 0%, rgba(255, 0, 110, 0.2) 100%);
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+/* Expander */
+.streamlit-expanderContent {
+    background: rgba(26, 31, 58, 0.5);
+    border: 1px solid rgba(0, 212, 255, 0.15);
+    border-radius: 8px;
+}
+
+/* Metrics */
+[data-testid="metric-container"] {
+    background: linear-gradient(135deg, rgba(30, 60, 114, 0.6) 0%, rgba(42, 82, 152, 0.4) 100%);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-md);
+}
