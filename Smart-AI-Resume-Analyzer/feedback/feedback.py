@@ -3,10 +3,17 @@ import sqlite3
 from datetime import datetime
 import pandas as pd
 import time
+import os
 
 class FeedbackManager:
     def __init__(self):
-        self.db_path = "feedback/feedback.db"
+        # Use absolute path for database - works on local and Streamlit Cloud
+        self.db_dir = os.path.join(os.path.dirname(__file__))
+        self.db_path = os.path.join(self.db_dir, 'feedback.db')
+        
+        # Ensure directory exists
+        os.makedirs(self.db_dir, exist_ok=True)
+        
         self.setup_database()
 
     def setup_database(self):

@@ -1,9 +1,17 @@
 import sqlite3
 from datetime import datetime
+import os
 
 def get_database_connection():
     """Create and return a database connection"""
-    conn = sqlite3.connect('resume_data.db')
+    # Use absolute path for database - works on local and Streamlit Cloud
+    db_dir = os.path.dirname(os.path.dirname(__file__))
+    db_path = os.path.join(db_dir, 'resume_data.db')
+    
+    # Ensure directory exists
+    os.makedirs(db_dir, exist_ok=True)
+    
+    conn = sqlite3.connect(db_path)
     return conn
 
 def init_database():
