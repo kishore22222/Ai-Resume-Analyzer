@@ -90,6 +90,15 @@ def init_database():
     )
     ''')
     
+    # Insert default admin if it doesn't exist
+    try:
+        cursor.execute('''
+            INSERT INTO admin (email, password) VALUES (?, ?)
+        ''', ('admin@example.com', 'admin123'))
+    except:
+        # Admin already exists, skip
+        pass
+    
     conn.commit()
     conn.close()
 
